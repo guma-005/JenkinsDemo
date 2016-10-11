@@ -11,7 +11,7 @@
  * Created on October 10, 2016, 4:50 PM
  */
 
-#include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
@@ -19,6 +19,7 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
+    cout<<" This is main function from Jenkins Demo Project"<<endl;
 
     return 0;
 }

@@ -22,6 +22,7 @@ House::House(const House& orig) {
 House::~House() {
 }
 
-House::WhoAreYou(){
+std::string House::WhoAreYou(){
     cout<<"I am a House "<<endl;
+    return typeName;
 }

@@ -25,7 +25,7 @@ public:
     
     std::string WhoAreYou();
 private:
-
+    std::string typeName = "HOUSE";
 };
 
 #endif /* HOUSE_H */
