@@ -6,7 +6,7 @@ env = Environment()
 #env.Append(CXXFLAGS = '-std=c++11')
 
 #sourceToBuild = [x for x in Glob('*.cpp') if str(x) not in excluded_files]
-sourceToBuild = [x for x in Glob('*.cpp')]
+sourceToBuild = [x for x in Glob('Demo/*.cpp')]
 env.Append(CPPFLAGS=['-Wall', '-ansi', '-pedantic', '-O2', '-lX11', '-std=c++11']) 
 
 env.Append(LIBPATH=['/opt/local/lib','/opt/local/lib/mariadb/mysql', '/usr/lib', '/usr/local/lib'])
@@ -53,20 +53,8 @@ env.Append(CPPDEFINES=['SETTINGS_DEVELOPMENT', 'USER_UMA'])
 env.Program(target = 'Project',   source= sourceToBuild   )
 
 
-#create the execution target (No input & output
-#env.Command(target= 'testOutput',    source = './CreateHouse',       action = ['./CreateHouse > $TARGET' , 'cat $TARGET'])
 
 env.Program(target='test',   source= [sourceToBuild]   )
-#env.Command(target= 'testOutput',    source = './test',       action = ['./TIFARTest'])
 
 
-#testEnv = env.Clone()
-#testEnv['CPPPATH'].append('./test/')
-#testEnv.Append(LIBPATH=['/opt/local/lib/'])
-#testEnv['LIBS'].append('-lboost_unit_test_framework-mt')
-#sourceToTest=['TIFARTest.cpp', 'chainFormingShiftTest.cpp','mockAmbu.cpp','mockDispatchCenter.cpp', 'mockRoute.cpp', 'mockTimer.cpp']
-
-
-#testEnv.Program(target = 'Test', source = [sourceToTest] )
-
-#env.Command(target= 'testOutput',    source = './test',       action = ['./'])
+#env.Command(target= 'testOutput',    source = './test',       action = ['./Project'])
