@@ -24,5 +24,5 @@ House::~House() {
 
 std::string House::WhoAreYou(){
     cout<<"I am a House "<<endl;
-    return typeName;
+    return;
 }
