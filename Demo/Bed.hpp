@@ -14,6 +14,9 @@
 #ifndef BED_HPP
 #define BED_HPP
 
+#include <iostream>
+using namespace std;
+
 class Bed {
 public:
     Bed();
