@@ -20,7 +20,7 @@ Bed::Bed(const Bed& orig) {
 
 Bed::~Bed() {
 }
-Bed::getBedSize(){
+std::string Bed::getBedSize(){
     return bedSize;
 }
 
