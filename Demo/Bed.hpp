@@ -23,8 +23,9 @@ public:
     Bed(const Bed& orig);
     virtual ~Bed();
     int getBedSize();
-private:
     int bedSize;
+private:
+    
 
 };
 
