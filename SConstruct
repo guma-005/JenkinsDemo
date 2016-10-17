@@ -6,8 +6,13 @@ env = Environment()
 #env.Append(CXXFLAGS = '-std=c++11')
 
 #sourceToBuild = [x for x in Glob('*.cpp') if str(x) not in excluded_files]
-sourceToBuild = [x for x in Glob('Demo/*.cpp')]
-env.Append(CPPFLAGS=['-Wall', '-ansi', '-pedantic', '-O2', '-lX11', '-std=c++11']) 
+
+
+allFiles =  [ x for x in Glob('Demo/*.cpp') ]
+
+excludedFiles = Glob('Demo/main.cpp')
+
+sourceToBuild = [x for x in allFiles if x not in excludedFiles]env.Append(CPPFLAGS=['-Wall', '-ansi', '-pedantic', '-O2', '-lX11', '-std=c++11']) 
 
 env.Append(LIBPATH=['/opt/local/lib','/opt/local/lib/mariadb/mysql', '/usr/lib', '/usr/local/lib'])
 import atexit
@@ -61,5 +66,5 @@ sourceToTest = ['testHouse.cpp', 'Bed.hpp']
 #testEnv.Append(CPPPATH=['/opt/local/lib', '/opt/local/include/' ])
 
 #testEnv.Append(FRAMEWORKS = ['-lboost_unit_test_framework-mt'])
-env.Program(target='test',   source = sourceToTest   )
+env.Program(target='test',   source = sourceToBuild   )
 #env.Command(target= 'testOutput',    source = './test',       action = ['./Project'])
