@@ -12,7 +12,9 @@ allFiles =  [ x for x in Glob('Demo/*.cpp') ]
 
 excludedFiles = Glob('Demo/main.cpp')
 
-sourceToBuild = [x for x in allFiles if x not in excludedFiles]env.Append(CPPFLAGS=['-Wall', '-ansi', '-pedantic', '-O2', '-lX11', '-std=c++11']) 
+sourceToBuild = [x for x in allFiles if x not in excludedFiles]
+
+env.Append(CPPFLAGS=['-Wall', '-ansi', '-pedantic', '-O2', '-lX11', '-std=c++11']) 
 
 env.Append(LIBPATH=['/opt/local/lib','/opt/local/lib/mariadb/mysql', '/usr/lib', '/usr/local/lib'])
 import atexit
