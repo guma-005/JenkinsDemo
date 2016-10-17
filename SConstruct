@@ -61,12 +61,9 @@ env.Program(target = 'Project',   source= sourceToBuild   )
 
 
 
-env.Program(target='test',   source= [sourceToBuild]   )
+env.Program(target='Test',   source= [sourceToBuild]   )
 
 #testEnv = Environment()
 sourceToTest = ['testHouse.cpp', 'Bed.hpp']
 #testEnv.Append(CPPPATH=['/opt/local/lib', '/opt/local/include/' ])
 
-#testEnv.Append(FRAMEWORKS = ['-lboost_unit_test_framework-mt'])
-env.Program(target='test',   source = sourceToBuild   )
-#env.Command(target= 'testOutput',    source = './test',       action = ['./Project'])
